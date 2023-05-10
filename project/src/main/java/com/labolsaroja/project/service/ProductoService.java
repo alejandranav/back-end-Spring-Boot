@@ -1,5 +1,8 @@
 package com.labolsaroja.project.service;
 
+
+import java.util.List;
+
 import com.labolsaroja.project.entities.Producto;
 
 public class ProductoService {
@@ -21,6 +24,11 @@ public class ProductoService {
 	}
 
 	public Producto addProducto(Producto producto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Producto> getAllProductos() {
 		// TODO Auto-generated method stub
 		return null;
 	}

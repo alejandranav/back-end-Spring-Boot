@@ -1,5 +1,7 @@
 package com.labolsaroja.project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,13 +26,18 @@ public class ControllerProducto {
 	}
 
 	
- @PostMapping 
-public Producto addProducto(@RequestBody Producto producto) {
-	return productoService.addProducto(producto);
-			
- }//addProducto
+	@PostMapping 
+	public Producto addProducto(@RequestBody Producto producto) {
+		return productoService.addProducto(producto);
+				
+	 }//addProducto
+	
+	@GetMapping
+	public List<Producto> getAllProductos(){
+		return productoService.getAllProductos();
+	}//getAllProducts
  
- @GetMapping (path="{prodId}")
+ 	@GetMapping (path="{prodId}")
 	public Producto getProducto(@PathVariable ("prodId") Long id) {
 		return productoService.getProducto(id);
 	}//getProducto

@@ -4,10 +4,10 @@ public class Usuario {
 	private long idUsuarios;
 	private String nombre;
 	private String email;
-	private int telefono;
+	private String telefono;
 	private String contrasena;
 	
-	public Usuario(long idUsuarios, String nombre, String email, int telefono, String contrasena) {
+	public Usuario(long idUsuarios, String nombre, String email, String telefono, String contrasena) {
 		super();
 		this.idUsuarios = idUsuarios;
 		this.nombre = nombre;
@@ -43,11 +43,11 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
