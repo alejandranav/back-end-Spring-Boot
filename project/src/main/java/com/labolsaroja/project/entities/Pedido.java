@@ -3,7 +3,7 @@ package com.labolsaroja.project.entities;
 import java.util.Date;
 
 public class Pedido {
-	private int idPedido;
+	private long idPedido;
 	private Date fecha;
 	private float total;
 	
@@ -14,29 +14,43 @@ public class Pedido {
 		this.total = total;
 	}
 
-	public int getIdPedido() {
+	
+
+	public long getIdPedido() {
 		return idPedido;
 	}
 
-	public void setIdPedido(int idPedido) {
+
+
+	public void setIdPedido(long idPedido) {
 		this.idPedido = idPedido;
 	}
+
+
 
 	public Date getFecha() {
 		return fecha;
 	}
 
+
+
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
+
+
 
 	public float getTotal() {
 		return total;
 	}
 
+
+
 	public void setTotal(float total) {
 		this.total = total;
 	}
+
+
 
 	@Override
 	public String toString() {
