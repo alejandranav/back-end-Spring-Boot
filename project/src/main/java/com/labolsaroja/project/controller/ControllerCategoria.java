@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.labolsaroja.project.entities.Categoria;
+import com.labolsaroja.project.service.CategoriaService;
 @RestController
 @RequestMapping (path="/api/categoria/")
 public class ControllerCategoria {

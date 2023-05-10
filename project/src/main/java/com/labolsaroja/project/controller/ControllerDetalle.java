@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.labolsaroja.project.entities.Detalle_pedido;
+import com.labolsaroja.project.service.DetalleService;
+ 
 @RestController
 @RequestMapping (path="/api/detalle/")
 public class ControllerDetalle {
@@ -22,23 +26,23 @@ public class ControllerDetalle {
 
 	
  @PostMapping 
-public Detalle addDetalle(@RequestBody Detalle detalle) {
+public Detalle_pedido addDetalle(@RequestBody Detalle_pedido detalle) {
 	return detalleService.addDetalle(detalle);
 			
  }//addDetalle
  
  @GetMapping (path="{detId}")
-	public Detalle getDetalle(@PathVariable ("detId") Long id) {
+	public Detalle_pedido getDetalle(@PathVariable ("detId") Long id) {
 		return detalleService.getDetalle(id);
 	}//getDetalle
 	
 	@DeleteMapping (path="{detId}")
-	public Detalle deleteDetalle(@PathVariable ("detId") Long id) {
+	public Detalle_pedido deleteDetalle(@PathVariable ("detId") Long id) {
 		return detalleService.deleteDetalle(id);
 	}//deleteDetalle
 
 	@PutMapping (path="{detId}")
-	public Detalle updateDetalle(@PathVariable ("detId") Long id,
+	public Detalle_pedido updateDetalle(@PathVariable ("detId") Long id,
 			@RequestParam (required=false) int cantidad)
 			 {
 			
