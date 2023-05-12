@@ -62,7 +62,7 @@ usuarioRepository.deleteById(id);;
 				
 				tmp=usuarioRepository.findById(idUsuarios).get();
 				if(tmp.getContrasena().equals(changePassword.getPassword())) {
-					tmp.getContrasena();
+					tmp.setContrasena(changePassword.getNewPassword());
 					usuarioRepository.save(tmp);
 				}else {
 					tmp=null;

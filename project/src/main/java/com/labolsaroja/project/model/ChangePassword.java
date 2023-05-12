@@ -5,13 +5,11 @@ public class ChangePassword {
 	private String newPassword;
 	
 	public ChangePassword(String password, String newPassword) {
-		super();
 		this.password = password;
 		this.newPassword = newPassword;
 	}//Constructor
 
 	public ChangePassword() {
-		super();
 	}//Constructor vacio
 
 	public String getPassword() {
