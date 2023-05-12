@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.labolsaroja.project.entities.Detalle_pedido;
+import com.labolsaroja.project.model.Detalle_pedido;
 import com.labolsaroja.project.service.DetalleService;
  
 @RestController

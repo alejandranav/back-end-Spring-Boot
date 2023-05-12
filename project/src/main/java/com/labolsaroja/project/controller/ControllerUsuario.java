@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.labolsaroja.project.entities.Usuario;
+import com.labolsaroja.project.model.Usuario;
 import com.labolsaroja.project.service.UsuarioService;
 @RestController
 @RequestMapping (path="/api/usuario/")

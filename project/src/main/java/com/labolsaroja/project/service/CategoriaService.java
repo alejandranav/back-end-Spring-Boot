@@ -1,6 +1,6 @@
 package com.labolsaroja.project.service;
 
-import com.labolsaroja.project.entities.Categoria;
+import com.labolsaroja.project.model.Categoria;
 
 public class CategoriaService {
 

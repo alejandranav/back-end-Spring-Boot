@@ -1,6 +1,6 @@
 package com.labolsaroja.project.service;
 
-import com.labolsaroja.project.entities.Material;
+import com.labolsaroja.project.model.Material;
 
 public class MaterialService {
 

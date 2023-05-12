@@ -1,6 +1,6 @@
 package com.labolsaroja.project.service;
 
-import com.labolsaroja.project.entities.Detalle_pedido;
+import com.labolsaroja.project.model.Detalle_pedido;
 
 public class DetalleService {
 

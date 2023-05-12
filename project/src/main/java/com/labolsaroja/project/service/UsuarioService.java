@@ -2,7 +2,7 @@ package com.labolsaroja.project.service;
 
 import java.util.List;
 
-import com.labolsaroja.project.entities.Usuario;
+import com.labolsaroja.project.model.Usuario;
 
 public class UsuarioService {
 

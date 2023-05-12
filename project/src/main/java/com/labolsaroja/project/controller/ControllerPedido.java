@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.labolsaroja.project.entities.Pedido;
+import com.labolsaroja.project.model.Pedido;
 import com.labolsaroja.project.service.PedidoService;
 @RestController
 @RequestMapping (path="/api/pedido/")

@@ -2,7 +2,7 @@ package com.labolsaroja.project.service;
 
 import java.util.Date;
 
-import com.labolsaroja.project.entities.Pedido;
+import com.labolsaroja.project.model.Pedido;
 
 public class PedidoService {
 

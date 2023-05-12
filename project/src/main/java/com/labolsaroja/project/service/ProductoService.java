@@ -3,7 +3,7 @@ package com.labolsaroja.project.service;
 
 import java.util.List;
 
-import com.labolsaroja.project.entities.Producto;
+import com.labolsaroja.project.model.Producto;
 
 public class ProductoService {
 

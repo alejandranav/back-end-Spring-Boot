@@ -1,4 +1,4 @@
-package com.labolsaroja.project.entities;
+package com.labolsaroja.project.model;
 
 public class Material {
 	private long IdMaterial;
