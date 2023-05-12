@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.labolsaroja.project.model.ChangePassword;
 import com.labolsaroja.project.model.Usuario;
 import com.labolsaroja.project.service.UsuarioService;
 @RestController
@@ -38,24 +39,21 @@ public class ControllerUsuario {
  	}
  
  	@GetMapping (path="{usrId}")
-	public Usuario getUsuario(@PathVariable ("usrId") Long id) {
-		return usuarioService.getUsuario(id);
+	public Usuario getUsuario(@PathVariable ("usrId") Long idUsuarios) {
+		return usuarioService.getUsuario(idUsuarios);
 	}//getUsuario
 	
 	@DeleteMapping (path="{usrId}")
-	public Usuario deleteCategoria(@PathVariable ("usrId") Long id) {
-		return usuarioService.deleteUsuario(id);
+	public Usuario deleteCategoria(@PathVariable ("usrId") Long idUsuarios) {
+		return usuarioService.deleteUsuario(idUsuarios);
 	}//deleteUsuario
 
 	@PutMapping (path="{usrId}")
 	public Usuario updateUsuario(@PathVariable ("usrId") Long idUsuarios,
-			@RequestParam (required=false)String nombre,
-			@RequestParam (required=false)String email,
-			@RequestParam (required=false)String telefono,
-			@RequestParam (required=false)String contrasena
+			@RequestBody ChangePassword changePassword
 			)
 			 {
 			
-		return usuarioService.updateUsuario(idUsuarios, nombre,email, telefono,contrasena);
+		return usuarioService.updateUsuario(idUsuarios,changePassword);
 	}//updateUsuario
 }

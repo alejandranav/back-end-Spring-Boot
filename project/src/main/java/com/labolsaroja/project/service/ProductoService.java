@@ -3,13 +3,26 @@ package com.labolsaroja.project.service;
 
 import java.util.List;
 
-import com.labolsaroja.project.model.Producto;
+import org.generation.ecommerce.model.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.labolsaroja.project.model.Producto;
+import com.labolsaroja.project.repository.ProductoRepository;
+
+@Service
 public class ProductoService {
+	private final ProductoRepository productoRepository;
+	@Autowired
+	public ProductoService(ProductoRepository productoRepository) {
+		this.productoRepository=productoRepository;
+	}
 
 	public Producto getProducto(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return productoRepository.findById(id).orElseThrow(
+				()-> new IllegalArgumentException("Usuario con id"
+	+id+" no existe.")
+);
 	}
 
 	public Producto deleteProducto(Long id) {
@@ -24,13 +37,15 @@ public class ProductoService {
 	}
 
 	public Producto addProducto(Producto producto) {
-		// TODO Auto-generated method stub
-		return null;
+		Producto tmp=null;
+		if(productoRepository.findById(producto.getId()).isEmpty()) {
+			tmp=productoRepository.save(producto);
+					}//if
+		return tmp;
 	}
 
 	public List<Producto> getAllProductos() {
-		// TODO Auto-generated method stub
-		return null;
+		return productoRepository.findAll();
 	}
 
 

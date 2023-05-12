@@ -2,9 +2,18 @@ package com.labolsaroja.project.service;
 
 import java.util.Date;
 
-import com.labolsaroja.project.model.Pedido;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.labolsaroja.project.model.Pedido;
+import com.labolsaroja.project.repository.PedidoRepository;
+@Service
 public class PedidoService {
+	private final PedidoRepository pedidoRepository;
+	@Autowired
+	public PedidoService(PedidoRepository pedidoRepository) {
+		this.pedidoRepository=pedidoRepository;
+	}
 
 	public Pedido addPedido(Pedido pedido) {
 		// TODO Auto-generated method stub
