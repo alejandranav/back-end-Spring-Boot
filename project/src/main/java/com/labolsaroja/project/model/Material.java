@@ -1,7 +1,20 @@
 package com.labolsaroja.project.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="material")
 public class Material {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="idmaterial", unique = true, nullable = false)
 	private long IdMaterial;
+	@Column(nullable = false)
 	private String material;
 	
 	public Material(long idMaterial, String material) {

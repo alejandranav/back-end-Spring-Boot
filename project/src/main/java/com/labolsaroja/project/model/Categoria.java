@@ -1,8 +1,22 @@
 package com.labolsaroja.project.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="categoria")
 public class Categoria {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="idcategoria", unique = true, nullable = false)
 	private long id;
+	@Column(nullable = false)
 	private String tipo;
+	
 	public Categoria(long id, String tipo) {
 		super();
 		this.id = id;

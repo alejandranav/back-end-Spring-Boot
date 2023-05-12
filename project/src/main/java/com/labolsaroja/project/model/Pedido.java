@@ -2,9 +2,23 @@ package com.labolsaroja.project.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="pedido")
 public class Pedido {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="idpedido", unique = true, nullable = false)
 	private long idPedido;
+	@Column(nullable = false)
 	private Date fecha;
+	@Column(nullable = false)
 	private float total;
 	
 	public Pedido(int idPedido, Date fecha, float total) {

@@ -1,10 +1,26 @@
 package com.labolsaroja.project.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="usuario")
 public class Usuario {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="idusuarios", unique = true, nullable = false)
 	private long idUsuarios;
+	@Column(nullable = false)
 	private String nombre;
+	@Column(nullable = false)
 	private String email;
+	@Column(nullable = false)
 	private String telefono;
+	@Column(nullable = false)
 	private String contrasena;
 	
 	public Usuario(long idUsuarios, String nombre, String email, String telefono, String contrasena) {
