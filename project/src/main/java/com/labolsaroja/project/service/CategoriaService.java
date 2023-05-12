@@ -12,24 +12,41 @@ public class CategoriaService {
 	public CategoriaService(CategoriaRepository categoriaRepository) {
 		this.categoriaRepository=categoriaRepository;
 	}
+	
 	public Categoria addCategoria(Categoria categoria) {
 		// TODO Auto-generated method stub
-		return null;
+		return categoriaRepository.save(categoria);
 	}
 
 	public Categoria getCategoria(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		Categoria tmp= null;
+		if (categoriaRepository.existsById(id)) {
+			tmp = categoriaRepository.findById(id).get();
+		}
+		return tmp;
 	}
 
 	public Categoria deleteCategoria(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		Categoria tmp= null;
+		if (categoriaRepository.existsById(id)) {
+			tmp = categoriaRepository.findById(id).get();
+					categoriaRepository.deleteById(id);
+		}
+		return tmp;
 	}
 
 	public Categoria updateCategoria(Long id, String tipo) {
 		// TODO Auto-generated method stub
-		return null;
+		Categoria tmp= null;
+		if (categoriaRepository.existsById(id)) {
+			tmp = categoriaRepository.findById(id).get();
+			if (tipo!=null) {
+				tmp.setTipo(tipo);
+			}
+		}
+		return tmp;
 	}
 
 }
