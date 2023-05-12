@@ -13,23 +13,38 @@ public class MaterialService {
 		this.materialRepository=materialRepository;
 	}
 	public Material addMaterial(Material material) {
-		// TODO Auto-generated method stub
-		return null;
+		Material tmpmat=null;
+		if(materialRepository.findById(material.getIdMaterial()).isEmpty()) {
+			tmpmat=materialRepository.save(material);
+					}//if
+		return tmpmat;
 	}
 
 	public Material getMaterial(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return materialRepository.findById(id).orElseThrow(
+				()-> new IllegalArgumentException("Usuario con id"
+	+id+" no existe.")
+);
 	}
 
 	public Material deleteMaterial(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Material tmpmat=null;
+		if(materialRepository.existsById(id)) {
+			tmpmat = materialRepository.findById(id).get();
+materialRepository.deleteById(id);
+		}
+		return tmpmat;
 	}
 
 	public Material updateMaterial(Long idMaterial, String material) {
-		// TODO Auto-generated method stub
-		return null;
+		Material tmpmat = null;
+		if(materialRepository.existsById(idMaterial)) {
+			tmpmat = materialRepository.findById(idMaterial).get();
+			if(material != null) {
+				tmpmat.setMaterial(material); 
+			}
+		}
+		return tmpmat;
 	}
 
 }

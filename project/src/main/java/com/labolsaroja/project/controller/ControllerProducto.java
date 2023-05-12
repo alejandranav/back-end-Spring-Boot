@@ -54,7 +54,7 @@ public class ControllerProducto {
 			@RequestParam (required=false)int ancho,
 			@RequestParam (required=false)int fuelle,
 			@RequestParam (required=false)String descripcion,
-			@RequestParam (required=false)double precio,
+			@RequestParam (required=false)Double precio,
 			@RequestParam (required=false)String img
 			)
 			 {

@@ -16,22 +16,30 @@ public class PedidoService {
 	}
 
 	public Pedido addPedido(Pedido pedido) {
-		// TODO Auto-generated method stub
-		return null;
+		Pedido tmpped=null;
+		if(pedidoRepository.findById(pedido.getIdPedido()).isEmpty()) {
+			tmpped=pedidoRepository.save(pedido);
+					}//if
+		return tmpped;
 	}
 
 	public Pedido getPedido(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return pedidoRepository.findById(id).orElseThrow(
+				()-> new IllegalArgumentException("Usuario con id"
+	+id+" no existe.")
+);
 	}
 
 	public Pedido deletePedido(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Pedido tmpped=null;
+		if(pedidoRepository.existsById(id)) {
+			tmpped=pedidoRepository.findById(id).get();
+pedidoRepository.deleteById(id);
+		}
+		return tmpped;
 	}
 
 	public Pedido updatePedido(Long idPedido, Date fecha, float total) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
