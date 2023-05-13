@@ -1,12 +1,12 @@
 package com.labolsaroja.project.service;
 
 import java.util.Date;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.labolsaroja.project.model.Pedido;
 import com.labolsaroja.project.repository.PedidoRepository;
+
 @Service
 public class PedidoService {
 	private final PedidoRepository pedidoRepository;
@@ -41,6 +41,10 @@ pedidoRepository.deleteById(id);
 
 	public Pedido updatePedido(Long idPedido, Date fecha, float total) {
 		return null;
+	}
+	
+	public List<Pedido> getAllPedidos() {
+		return pedidoRepository.findAll();
 	}
 
 }

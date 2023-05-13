@@ -1,8 +1,9 @@
 package com.labolsaroja.project.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.labolsaroja.project.model.Categoria;
 import com.labolsaroja.project.repository.CategoriaRepository;
 @Service
@@ -48,5 +49,10 @@ public class CategoriaService {
 		}
 		return tmp;
 	}
+	
+	public List<Categoria> getAllCategorias() {
+		return categoriaRepository.findAll();
+	}
+
 
 }

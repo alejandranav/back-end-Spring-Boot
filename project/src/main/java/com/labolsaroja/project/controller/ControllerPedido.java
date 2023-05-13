@@ -1,7 +1,7 @@
 package com.labolsaroja.project.controller;
 
 import java.util.Date;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.labolsaroja.project.model.Pedido;
 import com.labolsaroja.project.service.PedidoService;
+
 @RestController
 @RequestMapping (path="/api/pedido/")
 
@@ -27,13 +27,16 @@ public class ControllerPedido {
 	}
 
 	
- @PostMapping 
-public Pedido addPedido(@RequestBody Pedido pedido) {
-	return pedidoService.addPedido(pedido);
-			
- }//addPedido
+	@PostMapping 
+	public Pedido addPedido(@RequestBody Pedido pedido) {
+		return pedidoService.addPedido(pedido);		
+	}//addPedido
  
- @GetMapping (path="{pedidoId}")
+	@GetMapping
+ 	public List<Pedido> getAllPedidos() {
+ 		return pedidoService.getAllPedidos();}
+ 
+	@GetMapping (path="{pedidoId}")
 	public Pedido getPedido(@PathVariable ("pedidoId") Long id) {
 		return pedidoService.getPedido(id);
 	}//getPedido

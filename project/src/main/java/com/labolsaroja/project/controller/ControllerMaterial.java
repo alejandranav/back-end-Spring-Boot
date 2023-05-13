@@ -1,5 +1,7 @@
 package com.labolsaroja.project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.labolsaroja.project.model.Material;
 import com.labolsaroja.project.service.MaterialService;
 @RestController
@@ -29,6 +30,9 @@ public Material addMaterial(@RequestBody Material material) {
 	return materialService.addMaterial(material);
 			
  }//addMaterial
+	@GetMapping
+ 	public List<Material> getAll() {
+ 		return materialService.getAllMaterials();}
  
  @GetMapping (path="{matId}")
 	public Material getMaterial(@PathVariable ("matId") Long id) {

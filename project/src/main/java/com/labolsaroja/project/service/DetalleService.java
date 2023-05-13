@@ -1,8 +1,9 @@
 package com.labolsaroja.project.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.labolsaroja.project.model.Detalle_pedido;
 import com.labolsaroja.project.repository.Detalle_PedidoRepository;
 @Service
@@ -40,6 +41,10 @@ detalleRepository.deleteById(id);
 	public Detalle_pedido updateDetalle(Long id, int cantidad) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public List<Detalle_pedido> getAllDetalle_pedidos() {
+		return detalleRepository.findAll();
 	}
 
 }

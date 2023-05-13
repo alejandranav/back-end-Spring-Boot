@@ -21,7 +21,7 @@ public class Pedido {
 	@Column(nullable = false)
 	private float total;
 	
-	public Pedido(int idPedido, Date fecha, float total) {
+	public Pedido(long idPedido, Date fecha, float total) {
 		super();
 		this.idPedido = idPedido;
 		this.fecha = fecha;

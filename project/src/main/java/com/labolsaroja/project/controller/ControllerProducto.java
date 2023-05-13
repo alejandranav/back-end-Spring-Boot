@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.labolsaroja.project.model.Producto;
 import com.labolsaroja.project.service.ProductoService;
+
 @RestController
 @RequestMapping (path="/api/producto/")
 public class ControllerProducto {
@@ -50,16 +50,13 @@ public class ControllerProducto {
 	@PutMapping (path="{prodId}")
 	public Producto updateProducto(@PathVariable ("prodId") Long id,
 			@RequestParam (required=false)String nombre,
-			@RequestParam (required=false)int largo,
-			@RequestParam (required=false)int ancho,
-			@RequestParam (required=false)int fuelle,
 			@RequestParam (required=false)String descripcion,
 			@RequestParam (required=false)Double precio,
 			@RequestParam (required=false)String img
 			)
 			 {
 			
-		return productoService.updateProducto(id, nombre,largo,ancho,fuelle,descripcion,precio, img);
+		return productoService.updateProducto(id, nombre,descripcion,precio, img);
 	}//updateProducto
 	
 	

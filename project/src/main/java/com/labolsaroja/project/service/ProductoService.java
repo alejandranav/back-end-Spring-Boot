@@ -4,7 +4,6 @@ package com.labolsaroja.project.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.labolsaroja.project.model.Producto;
 import com.labolsaroja.project.repository.ProductoRepository;
 
@@ -32,20 +31,19 @@ productoRepository.deleteById(id);
 		return tmpProd;
 	}
 
-	public Producto updateProducto(Long id, String nombre, int largo, int ancho, int fuelle, String descripcion,
+	public Producto updateProducto(Long id, String nombre, String descripcion,
 			Double precio, String img) {
 		Producto tmpProd=null;
 		if(productoRepository.existsById(id)) {
 			tmpProd = productoRepository.findById(id).get();
-			if(nombre != null) {
-				tmpProd.setNombre(nombre);
-			} if(descripcion != null) {
-				tmpProd.setDescripcion(descripcion);
-			} if(precio != null) {
-				tmpProd.setPrecio(precio);
-			} if(img != null) {
-				tmpProd.setImg(img);
-			}
+			if(nombre != null) tmpProd.setNombre(nombre);
+		//	if(largo != null) tmpProd.setLargo(largo);
+		//	if(ancho != null) tmpProd.setAncho(ancho);
+		//	if(fuelle != null) tmpProd.setFuelle(fuelle);
+			if(descripcion != null) tmpProd.setDescripcion(descripcion);
+			if(precio != null) tmpProd.setPrecio(precio);
+			if(img != null) tmpProd.setImg(img);
+			
 		}
 		return tmpProd;
 	}
